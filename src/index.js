@@ -1,7 +1,7 @@
-// import { mapInit } from './js/ymaps';
+import { mapInit } from './js/ymaps';
 import render from './templates/friends.hbs';
 
-// window.onload = mapInit();
+window.onload = mapInit();
 
 const list = [
   { name: 'Иван', last_name: 'Иванов'},
@@ -12,6 +12,6 @@ const list = [
   { name: 'Кирилл', last_name: 'Иванов'},
   { name: 'Кирилл', last_name: 'Иванов'},
   { name: 'Кирилл', last_name: 'Иванов'}
-]
+];
 
 map.innerHTML = render(); // Handlebars.compile
