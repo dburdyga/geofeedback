@@ -79,11 +79,12 @@ function addFeedback(obj, myMap, position, clusterer, popup, hintContent) {
 
 function placemarks(obj, myMap, position, clusterer, popup) {
     var placemark = new ymaps.Placemark(obj.coords, {
-        hintContent: popup.children[1].lastChild.innerHTML,
+        // hintContent: popup.children[1].lastChild.innerHTML,
         // balloonContent: popup.children[1].lastChild.innerHTML + obj.address
-        balloonContentHeader: popup.children[1].lastChild.innerHTML,
+        balloonContentHeader: 'Место',
         balloonContentBody: obj.address,
-        balloonContentFooter: obj.address
+        balloonContentFooter: 'Отзыв',
+        hintContent: 'Подсказка'
     }, {
         preset: 'islands#violetDotIcon',
         openHintOnHover: false
