@@ -56,7 +56,7 @@ ul{
   width: 380px;
   height: 526px;
   border-radius: 7px;
-  position: absolute;
+  position: sticky;
   display: none;
 }
 

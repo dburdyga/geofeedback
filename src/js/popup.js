@@ -7,7 +7,7 @@ function openPopup(obj, myMap, position, clusterer, hintContent) {
 
     popup.style.display = 'block';
     popup.innerHTML = render();
-    popup.style.position = 'absolute';
+    // popup.style.position = 'absolute';
     popup.style.top = position[1] + 'px';
     popup.style.left = position[0] + 'px';
 
