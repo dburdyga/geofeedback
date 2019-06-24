@@ -81,7 +81,7 @@ function placemarks(obj, myMap, position, clusterer, popup) {
     var placemark = new ymaps.Placemark(obj.coords, {
         // hintContent: popup.children[1].lastChild.innerHTML,
         // balloonContent: popup.children[1].lastChild.innerHTML + obj.address
-        balloonContentHeader: 'Место',
+        balloonContentHeader: popup.children[1].lastChild.innerHTML,
         balloonContentBody: obj.address,
         balloonContentFooter: 'Отзыв',
         hintContent: 'Подсказка'
