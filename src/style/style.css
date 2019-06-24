@@ -107,7 +107,7 @@ ul{
   margin: 0;
   border-bottom: 1px solid #f0f0f0;
   padding: 0;
-  overflow: scroll;
+  /*overflow: scroll;*/
 }
 
 .form{
@@ -139,6 +139,7 @@ ul{
   font-size: 15px;
   font-weight: 300;
   line-height: 22px;
+  outline:0;
 }
 
 .form__name{
