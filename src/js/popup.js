@@ -47,6 +47,11 @@ function addFeedback(obj, myMap, position, clusterer, popup, hintContent) {
             place.innerHTML = inputPlace.value;
             text.innerHTML = inputText.value;
 
+            const parsedText = {
+                place: inputPlace.value,
+                feedback: inputText.value
+            };
+
             var date = new Date();
 
             day.innerHTML = date.getDate() + '.' + date.getMonth() + '.' + date.getFullYear();
@@ -69,7 +74,8 @@ function addFeedback(obj, myMap, position, clusterer, popup, hintContent) {
             inputName.value = '';
             inputText.value = '';
 
-            placemarks(obj, myMap, position, clusterer, popup);
+
+            placemarks(obj, myMap, position, clusterer, popup, parsedText);
             feedbacksArray.push(feedback);
         } else {
             alert('Заполните все поля!')
@@ -77,14 +83,12 @@ function addFeedback(obj, myMap, position, clusterer, popup, hintContent) {
     })
 }
 
-function placemarks(obj, myMap, position, clusterer, popup) {
+function placemarks(obj, myMap, position, clusterer, popup, text) {
     var placemark = new ymaps.Placemark(obj.coords, {
-        // hintContent: popup.children[1].lastChild.innerHTML,
-        // balloonContent: popup.children[1].lastChild.innerHTML + obj.address
-        balloonContentHeader: popup.children[1].lastChild.innerHTML,
+        hintContent: popup.children[1].lastChild.innerHTML,
+        balloonContentHeader:text.place,
         balloonContentBody: obj.address,
-        balloonContentFooter: 'Отзыв',
-        hintContent: 'Подсказка'
+        balloonContentFooter: text.feedback
     }, {
         preset: 'islands#violetDotIcon',
         openHintOnHover: false
