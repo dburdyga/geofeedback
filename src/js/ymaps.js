@@ -13,7 +13,7 @@ function mapInit() {
         });
 
         var clusterer = new ymaps.Clusterer({
-            preset: 'islands#invertedDarkOrangeClusterIcons',
+            preset: 'islands#invertedVioletClusterIcons',
             clusterDisableClickZoom: true,
             openBalloonOnClick: true,
             groupByCoordinates: false,

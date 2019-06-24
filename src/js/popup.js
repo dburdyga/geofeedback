@@ -63,11 +63,10 @@ function addFeedback(obj, myMap, position, clusterer, popup, hintContent) {
 
             feedback.appendChild(firstLine);
             feedback.appendChild(text);
-
             feedbacks.appendChild(feedback);
 
-            inputName.value = '';
             inputPlace.value = '';
+            inputName.value = '';
             inputText.value = '';
 
             placemarks(obj, myMap, position, clusterer, popup);
@@ -81,9 +80,12 @@ function addFeedback(obj, myMap, position, clusterer, popup, hintContent) {
 function placemarks(obj, myMap, position, clusterer, popup) {
     var placemark = new ymaps.Placemark(obj.coords, {
         hintContent: popup.children[1].lastChild.innerHTML,
-        balloonContent: obj.address + popup.children[1].lastChild.innerHTML
+        // balloonContent: popup.children[1].lastChild.innerHTML + obj.address
+        balloonContentHeader: popup.children[1].lastChild.innerHTML,
+        balloonContentBody: obj.address,
+        balloonContentFooter: obj.address
     }, {
-        preset: 'islands#darkOrangeDotIcon',
+        preset: 'islands#violetDotIcon',
         openHintOnHover: false
     });
 
@@ -92,7 +94,8 @@ function placemarks(obj, myMap, position, clusterer, popup) {
 
     placemark.events.add('click', () => {
         openPopup(obj, myMap, position, clusterer, placemark.properties._data.hintContent);
-    })
+    });
+
 }
 
 function closePopup(popup) {
@@ -103,6 +106,8 @@ function closePopup(popup) {
         popup.innerHTML = '';
     })
 }
+
+
 
 export {
     openPopup
