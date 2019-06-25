@@ -74,7 +74,6 @@ function addFeedback(obj, myMap, position, clusterer, popup, hintContent) {
             inputName.value = '';
             inputText.value = '';
 
-
             placemarks(obj, myMap, position, clusterer, popup, parsedText);
             feedbacksArray.push(feedback);
         } else {
@@ -86,7 +85,7 @@ function addFeedback(obj, myMap, position, clusterer, popup, hintContent) {
 function placemarks(obj, myMap, position, clusterer, popup, text) {
     var placemark = new ymaps.Placemark(obj.coords, {
         hintContent: popup.children[1].lastChild.innerHTML,
-        balloonContentHeader:text.place,
+        balloonContentHeader: text.place,
         balloonContentBody: obj.address,
         balloonContentFooter: text.feedback
     }, {
@@ -111,8 +110,6 @@ function closePopup(popup) {
         popup.innerHTML = '';
     })
 }
-
-
 
 export {
     openPopup
