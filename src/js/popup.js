@@ -1,7 +1,5 @@
 import render from './../templates/popup.hbs';
 
-var feedbacksArray = [];
-
 function openPopup(obj, myMap, position, clusterer, hintContent) {
     var popup = document.querySelector('.popup');
 
@@ -75,7 +73,6 @@ function addFeedback(obj, myMap, position, clusterer, popup, hintContent) {
             inputText.value = '';
 
             placemarks(obj, myMap, position, clusterer, popup, parsedText);
-            feedbacksArray.push(feedback);
         } else {
             alert('Заполните все поля!')
         }
